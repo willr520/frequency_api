@@ -1,8 +1,11 @@
 const express = require('express');
+const cors = require('cors');
 const osc = require('oscillators');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+app.use(cors());
 
 app.use(express.json());
 
@@ -121,4 +124,4 @@ function getNoteFrequency(note) {
 
 //curl -X GET "http://localhost:3000/randomSound?inputString=Nathan"
 //curl -X GET "https://frequency-generator.onrender.com/randomSound?inputString=Nathan"
-//curl -X GET "http://frequency-generator.onrender.com/note-frequency?inputNote=C4"
+//curl -X GET "https://frequency-generator.onrender.com/note-frequency?inputNote=C4"
